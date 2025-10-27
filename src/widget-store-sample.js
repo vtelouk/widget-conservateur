@@ -248,6 +248,65 @@ export default class InfoCard extends HTMLElement {
       margin-top: 1rem;
     }
 
+    .form-motif {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .col-left label,
+    .col-right label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #333;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.9rem;
+      background-color: #fff;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0,122,163,0.2);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .col-right span {
+      font-size: 0.8rem;
+      font-weight: normal;
+      color: #666;
+    }
+
+    .form-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1rem;
+    }
+
   </style>
 
   <div class="container">
@@ -291,37 +350,48 @@ export default class InfoCard extends HTMLElement {
 
       <div class="card">
         <h3 class="italic">Motif de l'appel</h3>
-        <form id="motifForm">
-          <label for="motif">Motif :</label><br>
-          <select name="motif" id="motif" required>
-            <option value="">-- Choisir un motif --</option>
-            <option value="1">Motif 1</option>
-            <option value="2">Motif 2</option>
-            <option value="3">Motif 3</option>
-          </select><br><br>
+        <form id="motifForm" class="form-motif">
+          <div class="form-grid">
+            <!-- Colonne gauche -->
+            <div class="col-left">
+              <label>Motif :</label>
+              <select name="motif" required>
+                <option value="">-- Sélectionner --</option>
+                <option value="1">Motif 1</option>
+                <option value="2">Motif 2</option>
+                <option value="3">Motif 3</option>
+              </select>
 
-          <label for="sousMotif1">Sous motif 1 :</label><br>
-          <select name="sousMotif1" id="sousMotif1">
-            <option value="">-- Choisir --</option>
-            <option value="1">Sous motif 1</option>
-            <option value="2">Sous motif 2</option>
-            <option value="3">Sous motif 3</option>
-          </select><br><br>
+              <label>Sous-motif 1 :</label>
+              <select name="sousMotif1">
+                <option value="">-- Sélectionner --</option>
+                <option value="1">Sous-motif 1</option>
+                <option value="2">Sous-motif 2</option>
+                <option value="3">Sous-motif 3</option>
+              </select>
 
-          <label for="sousMotif2">Sous motif 2 :</label><br>
-          <select name="sousMotif2" id="sousMotif2">
-            <option value="">-- Choisir --</option>
-            <option value="1">Sous motif 1</option>
-            <option value="2">Sous motif 2</option>
-            <option value="3">Sous motif 3</option>
-          </select><br><br>
+              <label>Sous-motif 2 :</label>
+              <select name="sousMotif2">
+                <option value="">-- Sélectionner --</option>
+                <option value="1">Sous-motif 1</option>
+                <option value="2">Sous-motif 2</option>
+                <option value="3">Sous-motif 3</option>
+              </select>
+            </div>
 
-          <label for="commentaire">Commentaire :</label><br>
-          <textarea name="commentaire" id="commentaire" rows="4" placeholder="Ajoutez un commentaire..."></textarea><br><br>
+            <!-- Colonne droite -->
+            <div class="col-right">
+              <label>Commentaires <span>(255 caractères)</span> :</label>
+              <textarea name="commentaire" rows="6" maxlength="255" placeholder="Saisissez un commentaire..."></textarea>
+            </div>
+          </div>
 
-          <button type="submit" class="btn">Envoyer le motif</button>
+          <div class="form-footer">
+            <button type="submit" class="btn">Envoyer</button>
+          </div>
         </form>
       </div>
+
     </div>
   </div>
 `;

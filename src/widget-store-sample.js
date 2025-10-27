@@ -288,6 +288,40 @@ export default class InfoCard extends HTMLElement {
         <button class="btncrm">Envoyer vers CRM</button>
         <pre id="crmResult">Résultat du CRM ici...</pre>
       </div>
+
+      <div class="card">
+        <h3 class="italic">Motif de l'appel</h3>
+        <form id="motifForm">
+          <label for="motif">Motif :</label><br>
+          <select name="motif" id="motif" required>
+            <option value="">-- Choisir un motif --</option>
+            <option value="1">Motif 1</option>
+            <option value="2">Motif 2</option>
+            <option value="3">Motif 3</option>
+          </select><br><br>
+
+          <label for="sousMotif1">Sous motif 1 :</label><br>
+          <select name="sousMotif1" id="sousMotif1">
+            <option value="">-- Choisir --</option>
+            <option value="1">Sous motif 1</option>
+            <option value="2">Sous motif 2</option>
+            <option value="3">Sous motif 3</option>
+          </select><br><br>
+
+          <label for="sousMotif2">Sous motif 2 :</label><br>
+          <select name="sousMotif2" id="sousMotif2">
+            <option value="">-- Choisir --</option>
+            <option value="1">Sous motif 1</option>
+            <option value="2">Sous motif 2</option>
+            <option value="3">Sous motif 3</option>
+          </select><br><br>
+
+          <label for="commentaire">Commentaire :</label><br>
+          <textarea name="commentaire" id="commentaire" rows="4" placeholder="Ajoutez un commentaire..."></textarea><br><br>
+
+          <button type="submit" class="btn">Envoyer le motif</button>
+        </form>
+      </div>
     </div>
   </div>
 `;
@@ -306,6 +340,34 @@ export default class InfoCard extends HTMLElement {
         if (target) target.classList.toggle("hide");
       });
     });
+
+    const motifForm = this.shadowRoot.querySelector("#motifForm");
+
+    if (motifForm) {
+      motifForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // Récupère toutes les valeurs du formulaire
+        const formData = Object.fromEntries(new FormData(motifForm).entries());
+        console.log("📋 Données du formulaire :", formData);
+
+        try {
+          const res = await fetch("http://localhost:5000/api/motif", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          });
+
+          const data = await res.json();
+          console.log("✅ Réponse API CRM :", data);
+          alert("✅ Réponse API CRM : " + JSON.stringify(data));
+
+        } catch (err) {
+          console.error("❌ Erreur d'envoi :", err);
+          alert("Erreur lors de l’envoi du formulaire !");
+        }
+      });
+    }
 
     // === Bouton météo ===
     const crmButton = this.shadowRoot.querySelector(".btns");

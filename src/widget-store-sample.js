@@ -337,19 +337,48 @@ export default class InfoCard extends HTMLElement {
     }
 
     const crmBtn = this.shadowRoot.querySelector(".btncrm");
-    crmBtn.addEventListener("click", async () => {
-      try {
-        const res = await fetch("http://localhost:5000/api/token", {
-          method: "POST",
-        });
-        const data = await res.text();
-        console.log("🔑 Réponse token :", data);
-        alert("Résultat token : " + data);
-      } catch (err) {
-        console.error("❌ Erreur :", err);
-        alert("Erreur token !");
-      }
-    });
+
+    if (crmBtn) {
+      crmBtn.addEventListener("click", async () => {
+        try {
+          // 1️⃣ Récupération du token via ton proxy
+          const tokenRes = await fetch("http://localhost:5000/api/token", {
+            method: "POST",
+          });
+
+          if (!tokenRes.ok) throw new Error("Erreur lors de la récupération du token");
+          const tokenData = await tokenRes.json().catch(() => null);
+          const accessToken = tokenData?.access_token || null;
+
+          if (!accessToken) {
+            alert("❌ Aucun access_token trouvé dans la réponse !");
+            console.log("🔍 Réponse brute du token :", await tokenRes.text());
+            return;
+          }
+
+          console.log("✅ Token reçu :", accessToken);
+
+          // 2️⃣ Envoi de l'appel via ton proxy
+          const callRes = await fetch("http://localhost:5000/api/call", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${accessToken}`,
+            },
+          });
+
+          const callText = await callRes.text();
+          console.log("📞 Réponse de l’API /call :", callText);
+
+          // 3️⃣ Affichage à l'écran
+          alert("📞 Réponse API /call : " + callText);
+
+        } catch (err) {
+          console.error("❌ Erreur lors du flux CRM :", err);
+          alert("Erreur CRM : " + err.message);
+        }
+      });
+    }
 
     // === Bouton POST test ===
     const postBtn = this.shadowRoot.querySelector(".btnpost");

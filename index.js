@@ -101,69 +101,19 @@ app.post("/api/call", async (req, res) => {
 app.post("/api/motif", async (req, res) => {
   try {
     const formData = req.body;
-    console.log("📩 Données du formulaire motif reçues :", formData);
+    console.log("📩 Données reçues du formulaire :", formData);
 
-    // 1️⃣ Appeler ton propre endpoint /api/token pour obtenir le token
-    const tokenResponse = await fetch("http://localhost:5000/api/token", {
-      method: "POST",
+    // Retourne simplement les données au front
+    res.status(200).json({
+      message: "Formulaire reçu avec succès !",
+      data: formData,
     });
-
-    if (!tokenResponse.ok) {
-      const errText = await tokenResponse.text();
-      throw new Error("Échec récupération token : " + errText);
-    }
-
-    const tokenData = await tokenResponse.json().catch(() => null);
-    const accessToken = tokenData?.access_token;
-    if (!accessToken) throw new Error("Aucun access_token trouvé dans la réponse du token");
-
-    console.log("🔑 Token récupéré depuis /api/token :", accessToken);
-
-    // 2️⃣ Appeler le CRM Conservateur avec le token et les données du formulaire
-    const crmRes = await fetch("https://api.conservateur.fr/telephonie/appels", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${accessToken}`,
-      },
-      body: JSON.stringify({
-        idPersonne: "304100",
-        idAgent: "0020526",
-        nom: "BB",
-        prenom: "CC",
-        role: "DD",
-        fonction: "EE",
-        sens: "E",
-        loginWindows: "FF",
-        dateDebutAppel: new Date().toISOString().slice(0, 19).replace("T", " "),
-        fiches: [
-          {
-            numFiche: 1,
-            idContrat: "F-AHF-1263884",
-            commentaireMotif: formData.commentaire || "",
-            flagReclamation: true,
-            codeMotif1: formData.motif || "",
-            codeMotif2: formData.sousMotif1 || "",
-            codeMotif3: formData.sousMotif2 || "",
-            idPersonne: "304100",
-            commentaireTache: "Commentaire agent",
-            codeTache: "ET04",
-            dateTache: new Date().toISOString().slice(0, 19).replace("T", " "),
-          },
-        ],
-      }),
-    });
-
-    const crmResult = await crmRes.text();
-    console.log("📞 Réponse API CRM :", crmResult);
-
-    // 3️⃣ Retour au front
-    res.status(crmRes.status).send({ crmResult });
   } catch (err) {
-    console.error("❌ Erreur dans /api/motif :", err);
-    res.status(500).send({ error: err.message });
+    console.error("❌ Erreur /api/motif :", err);
+    res.status(500).json({ error: err.message });
   }
 });
+
 
 
 

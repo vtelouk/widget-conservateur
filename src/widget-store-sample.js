@@ -347,11 +347,12 @@ export default class InfoCard extends HTMLElement {
       motifForm.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        // Récupère toutes les valeurs du formulaire
+        // Récupère les valeurs du formulaire
         const formData = Object.fromEntries(new FormData(motifForm).entries());
-        console.log("📋 Données du formulaire :", formData);
+        console.log("📋 Données envoyées :", formData);
 
         try {
+          // Envoie au backend
           const res = await fetch("http://localhost:5000/api/motif", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -359,11 +360,15 @@ export default class InfoCard extends HTMLElement {
           });
 
           const data = await res.json();
-          console.log("✅ Réponse API CRM :", data);
-          alert("✅ Réponse API CRM : " + JSON.stringify(data));
+          console.log("✅ Réponse backend :", data);
+
+          // 🟢 Affiche la réponse dans un alert
+          alert(
+            `📋 Formulaire reçu :\nMotif : ${data.data.motif}\nSous Motif 1 : ${data.data.sousMotif1}\nSous Motif 2 : ${data.data.sousMotif2}\nCommentaire : ${data.data.commentaire}`
+          );
 
         } catch (err) {
-          console.error("❌ Erreur d'envoi :", err);
+          console.error("❌ Erreur envoi formulaire :", err);
           alert("Erreur lors de l’envoi du formulaire !");
         }
       });

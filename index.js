@@ -101,18 +101,73 @@ app.post("/api/call", async (req, res) => {
 app.post("/api/motif", async (req, res) => {
   try {
     const formData = req.body;
-    console.log("📩 Données reçues du formulaire :", formData);
 
-    // Retourne simplement les données au front
-    res.status(200).json({
-      message: "Formulaire reçu avec succès !",
-      data: formData,
+    // 1️⃣ Récupération du token via ton proxy local /api/token
+    const tokenResponse = await fetch("http://localhost:5000/api/token", {
+      method: "POST",
     });
+
+    if (!tokenResponse.ok) {
+      const errText = await tokenResponse.text();
+      throw new Error("Erreur récupération token : " + errText);
+    }
+
+    const tokenData = await tokenResponse.json().catch(() => null);
+    const accessToken = tokenData?.access_token;
+    if (!accessToken) throw new Error("Aucun access_token reçu");
+
+    // 2️⃣ Construction du corps pour l’API Conservateur
+    const body = {
+      idPersonne: "304100",
+      idAgent: "0020526",
+      nom: "BB",
+      prenom: "CC",
+      role: "DD",
+      fonction: "EE",
+      sens: "E",
+      loginWindows: "FF",
+      dateDebutAppel: new Date().toISOString().slice(0, 19).replace("T", " "),
+      fiches: [
+        {
+          numFiche: 1,
+          idContrat: "F-AHF-1263884",
+          commentaireMotif: formData.commentaire || "",
+          flagReclamation: true,
+          codeMotif1: formData.motif || "",
+          codeMotif2: formData.sousMotif1 || "",
+          codeMotif3: formData.sousMotif2 || "",
+          idPersonne: "304100",
+          commentaireTache: formData.commentaire || "",
+          codeTache: "ET04",
+          dateTache: new Date().toISOString().slice(0, 19).replace("T", " "),
+        },
+      ],
+    };
+
+    // 3️⃣ Envoi à l’API Conservateur
+    const crmResponse = await fetch("https://api.conservateur.fr/telephonie/appels", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify(body),
+    });
+
+    const crmResult = await crmResponse.text();
+
+    // 4️⃣ Retourne au front un résumé clair
+    res.status(200).json({
+      formulaireRecu: formData,
+      donneesEnvoyees: body,
+      reponseCRM: crmResult,
+    });
+
   } catch (err) {
-    console.error("❌ Erreur /api/motif :", err);
     res.status(500).json({ error: err.message });
   }
 });
+
 
 
 

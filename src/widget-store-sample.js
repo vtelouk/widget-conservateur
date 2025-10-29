@@ -422,7 +422,6 @@ export default class InfoCard extends HTMLElement {
         console.log("📋 Données envoyées :", formData);
 
         try {
-          // Envoie au backend
           const res = await fetch("http://localhost:5000/api/motif", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -430,11 +429,13 @@ export default class InfoCard extends HTMLElement {
           });
 
           const data = await res.json();
-          console.log("✅ Réponse backend :", data);
 
-          // 🟢 Affiche la réponse dans un alert
+          // 🟢 Affiche toutes les infos dans un seul alert formaté
           alert(
-            `📋 Formulaire reçu :\nMotif : ${data.data.motif}\nSous Motif 1 : ${data.data.sousMotif1}\nSous Motif 2 : ${data.data.sousMotif2}\nCommentaire : ${data.data.commentaire}`
+            `✅ Formulaire envoyé avec succès !\n\n` +
+            `📋 Données du formulaire :\n${JSON.stringify(data.formulaireRecu, null, 2)}\n\n` +
+            `📦 Données envoyées au CRM :\n${JSON.stringify(data.donneesEnvoyees, null, 2)}\n\n` +
+            `📞 Réponse de l'API CRM :\n${data.reponseCRM}`
           );
 
         } catch (err) {

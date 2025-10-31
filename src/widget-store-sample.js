@@ -380,40 +380,122 @@ export default class InfoCard extends HTMLElement {
               <label>Motif :</label>
               <select name="motif" required>
                 <option value="">-- Sélectionner --</option>
-                <option value="1">Motif 1</option>
-                <option value="2">Motif 2</option>
-                <option value="3">Motif 3</option>
+                <option value="RELA">Relance</option>
+                <option value="IGES">Information gestion</option>
+                <option value="DCME">Documents / duplicata</option>
+                <option value="ADEM">Autres demandes</option>
+                <option value="CLIB">Commentaire libre</option>
               </select>
 
               <label>Sous-motif 1 :</label>
               <select name="sousMotif1">
                 <option value="">-- Sélectionner --</option>
-                <option value="1">Sous-motif 1</option>
-                <option value="2">Sous-motif 2</option>
-                <option value="3">Sous-motif 3</option>
+                <option value="ECLI">Espace client</option>
+                <option value="JRID">Juridique</option>
+                <option value="PRDI">Produit</option>
+                <option value="DPLI">Duplicata</option>
+                <option value="REPA">Répartition</option>
+                <option value="VCNT">Valeur contrat</option>
+                <option value="FISC">Fiscalité</option>
+                <option value="AECH">Avis d'échéance</option>
+                <option value="PGES">Procédure de gestion</option>
+                <option value="PRES">Prestations</option>
+                <option value="CFIS">Certificats fiscaux</option>
+                <option value="APER">Avis d'opération</option>
+                <option value="PRDC">Production</option>
+                <option value="CEXC">Courrier d'excuses</option>
+                <option value="MPAS">Mot de passe</option>
+                <option value="LCBF">LCB/FT</option>
+                <option value="CCMM">Contact commercial</option>
+                <option value="RDS">RDS</option>
+                <option value="VIEC">Vie du contrat</option>
+                <option value="XXXX">xxxxxxxxx</option>
               </select>
 
               <label>Sous-motif 2 :</label>
               <select name="sousMotif2">
                 <option value="">-- Sélectionner --</option>
-                <option value="1">Sous-motif 1</option>
-                <option value="2">Sous-motif 2</option>
-                <option value="3">Sous-motif 3</option>
+                <option value="DECE">Décès</option>
+                <option value="RVIG">Remise en vigueur</option>
+                <option value="NANT">Nantissement / Main levée</option>
+                <option value="CRIB">Changement de RIB</option>
+                <option value="VCP">VCP</option>
+                <option value="CECH">Contrat échu</option>
+                <option value="RPRG">Rachat programmé</option>
+                <option value="RENT">Rentes</option>
+                <option value="INTE">Intérêts / remboursement d'avance</option>
+                <option value="TSRT">Transfert sortant</option>
+                <option value="FRGS">Fourgous</option>
+                <option value="CRRE">Correction</option>
+                <option value="PREL">Prélèvement / appel de cotisation</option>
+                <option value="VIDE">Vide</option>
+                <option value="CPER">Chèque périmé</option>
+                <option value="TENT">Transfert entrant</option>
+                <option value="ECKE">Eckert</option>
+                <option value="CAVA">Création d'avance</option>
+                <option value="ARBI">Arbitrage</option>
+                <option value="CADR">Changement d'adresse</option>
+                <option value="FCP">FCP</option>
+                <option value="RTTA">Rachat total</option>
+                <option value="RPAR">Rachat partiel</option>
+                <option value="BENE">Bénéficiaire</option>
+                <option value="FCNT">Fiche contact</option>
+                <option value="AN">AN</option>
+                <option value="OGES">Option de gestion</option>
+                <option value="MFRA">Modification frais de gestion</option>
+                <option value="RENN">Renonciation</option>
+                <option value="INST">Instance</option>
               </select>
             </div>
-
             <!-- Colonne droite -->
             <div class="col-right">
               <label>Commentaires <span>(255 caractères)</span> :</label>
               <textarea name="commentaire" rows="6" maxlength="255" placeholder="Saisissez un commentaire..."></textarea>
             </div>
           </div>
-
           <div class="form-footer">
             <button type="submit" class="btn">Envoyer</button>
           </div>
         </form>
       </div>
+
+      <div class="card">
+        <h3 class="italic">Tâches à réaliser</h3>
+        <form id="tacheForm" class="form-tache">
+          <div class="form-grid">
+            <!-- Colonne gauche -->
+            <div class="col-left">
+              <label>Tâche :</label>
+              <select name="tache" required>
+                <option value="">-- Sélectionner --</option>
+                <option value="ET01">Demande d'information</option>
+                <option value="ET02">Envoi de document</option>
+                <option value="ET03">Rappeler le client/agent</option>
+                <option value="ET04">Relance</option>
+                <option value="ET05">Validation de dossier</option>
+                <option value="ET06">Autre</option>
+              </select>
+              <label>Date de fin de tâche souhaitée :</label>
+              <input
+                type="date"
+                id="dateTache"
+                name="dateTache"
+                required
+                min="${new Date().toISOString().split('T')[0]}"
+              />
+            </div>
+            <!-- Colonne droite -->
+            <div class="col-right">
+              <label>Commentaires <span>(255 caractères)</span> :</label>
+              <textarea name="commentaire" rows="6" maxlength="255" placeholder="Saisissez un commentaire..."></textarea>
+            </div>
+          </div>
+          <div class="form-footer">
+            <button type="submit" class="btn">Envoyer</button>
+          </div>
+        </form>
+      </div>
+
 
     </div>
   </div>
@@ -434,42 +516,48 @@ export default class InfoCard extends HTMLElement {
       });
     });
 
-    motifForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
+    const motifForm = this.shadowRoot.querySelector("#motifForm");
+    const self = this; // 🟢 on garde la référence vers le composant
 
-      const formEntries = Object.fromEntries(new FormData(motifForm).entries());
+    if (motifForm) {
+      motifForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-      // Ajoute les infos utilisateur depuis ton widget
-      const formData = {
-        ...formEntries,
-        prenom: this.GETNAME(),
-        nom: this.GetLastName(),
-        idPersonne: this.GetIdPersonne(),
-        idAgent: this.GetIdAgent(),
-      };
+        const formEntries = Object.fromEntries(new FormData(motifForm).entries());
 
-      console.log("📋 Données envoyées au backend :", formData);
+        // On utilise maintenant `self` au lieu de `this`
+        const formData = {
+          ...formEntries,
+          prenom: self.GETNAME(),
+          nom: self.GetLastName(),
+          idPersonne: self.GetIdPersonne(),
+          idAgent: self.GetIdAgent(),
+        };
 
-      try {
-        const res = await fetch("http://localhost:5000/api/motif", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        });
+        console.log("📋 Données envoyées au backend :", formData);
 
-        const data = await res.json();
-        alert(
-          `✅ Données transmises au serveur !\n\n` +
-          `📋 Formulaire : ${JSON.stringify(data.formulaireRecu, null, 2)}\n\n` +
-          `📦 Données envoyées au CRM : ${JSON.stringify(data.donneesEnvoyees, null, 2)}\n\n` +
-          `📞 Réponse du CRM : ${data.reponseCRM}`
-        );
+        try {
+          const res = await fetch("http://localhost:5000/api/motif", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          });
 
-      } catch (err) {
-        console.error("❌ Erreur envoi :", err);
-        alert("Erreur lors de l’envoi du formulaire !");
-      }
-    });
+          const data = await res.json();
+
+          alert(
+            `✅ Données transmises au serveur !\n\n` +
+            `📋 Formulaire : ${JSON.stringify(data.formulaireRecu, null, 2)}\n\n` +
+            `📦 Données envoyées au CRM : ${JSON.stringify(data.donneesEnvoyees, null, 2)}\n\n` +
+            `📞 Réponse du CRM : ${data.reponseCRM}`
+          );
+
+        } catch (err) {
+          console.error("❌ Erreur envoi :", err);
+          alert("Erreur lors de l’envoi du formulaire !");
+        }
+      });
+    }
 
     // === Bouton météo ===
     const crmButton = this.shadowRoot.querySelector(".btns");

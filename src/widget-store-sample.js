@@ -328,6 +328,49 @@ export default class InfoCard extends HTMLElement {
       margin-top: 1rem;
     }
 
+    input[type="date"] {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      font-family: "Inter", system-ui, sans-serif;
+      color: #333;
+      width: 100%;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+    }
+
+    /* Effet focus bleu (style Webex) */
+    input[type="date"]:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 122, 163, 0.2);
+      outline: none;
+    }
+
+    /* Icône du calendrier */
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      background-color: var(--primary);
+      color: #fff;
+      border-radius: 6px;
+      padding: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator:hover {
+      background-color: var(--primary-hover);
+    }
+
+    /* Pour Firefox */
+    input[type="date"]::-moz-focus-inner {
+      border: 0;
+    }
   </style>
 
   <div class="container">

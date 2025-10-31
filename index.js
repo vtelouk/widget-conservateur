@@ -139,9 +139,7 @@ app.post("/api/motif", async (req, res) => {
           idPersonne: "304100",
           commentaireTache: formData.commentaireTache || "",
           codeTache: form.tache,
-          dateTache: form.dateTache
-            ? `${form.dateTache} 00:00:00`
-            : new Date().toISOString().slice(0, 19).replace("T", " "),
+          dateTache: getParisDateTime(form.dateTache),
         },
       ],
     };
@@ -184,3 +182,27 @@ app.use(express.static(join(__dirname, "src")));
 app.listen(port, () => {
   console.log(`✅ Serveur proxy & statique démarré sur http://localhost:${port}`);
 });
+
+function getParisDateTime(dateInput) {
+  const date = dateInput ? new Date(dateInput) : new Date();
+  const options = {
+    timeZone: "Europe/Paris",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+  };
+
+  // exemple : "31/10/2025 à 14:30:00" -> à reformater
+  const formatted = new Intl.DateTimeFormat("fr-FR", options).format(date);
+
+  // convertir au format SQL-like "YYYY-MM-DD HH:mm:ss"
+  const [day, month, year, hour, minute, second] = formatted
+    .replace(/[^\d]/g, " ")
+    .split(" ")
+    .filter(Boolean);
+  return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
+}

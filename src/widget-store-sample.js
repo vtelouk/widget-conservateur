@@ -388,6 +388,11 @@ export default class InfoCard extends HTMLElement {
             </div>
           </div>
 
+          <input type="hidden" name="prenom" value="${this.GETNAME() || ''}">
+          <input type="hidden" name="nom" value="${this.GetLastName() || ''}">
+          <input type="hidden" name="idPersonne" value="${this.GetIdPersonne() || ''}">
+          <input type="hidden" name="idAgent" value="${this.GetIdAgent() || ''}">
+
           <div class="form-footer">
             <button type="submit" class="btn">Envoyer</button>
           </div>
@@ -414,24 +419,14 @@ export default class InfoCard extends HTMLElement {
     });
 
     const motifForm = this.shadowRoot.querySelector("#motifForm");
-    const self = this; // 🟢 on garde la référence vers le composant
 
     if (motifForm) {
       motifForm.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        const formEntries = Object.fromEntries(new FormData(motifForm).entries());
-
-        // On utilise maintenant `self` au lieu de `this`
-        const formData = {
-          ...formEntries,
-          prenom: self.GETNAME(),
-          nom: self.GetLastName(),
-          idPersonne: self.GetIdPersonne(),
-          idAgent: self.GetIdAgent(),
-        };
-
-        console.log("📋 Données envoyées au backend :", formData);
+        // Récupère toutes les valeurs, y compris les hidden
+        const formData = Object.fromEntries(new FormData(motifForm).entries());
+        console.log("📋 Données envoyées :", formData);
 
         try {
           const res = await fetch("http://localhost:5000/api/motif", {
@@ -443,19 +438,18 @@ export default class InfoCard extends HTMLElement {
           const data = await res.json();
 
           alert(
-            `✅ Données transmises au serveur !\n\n` +
-            `📋 Formulaire : ${JSON.stringify(data.formulaireRecu, null, 2)}\n\n` +
-            `📦 Données envoyées au CRM : ${JSON.stringify(data.donneesEnvoyees, null, 2)}\n\n` +
-            `📞 Réponse du CRM : ${data.reponseCRM}`
+            `✅ Formulaire envoyé avec succès !\n\n` +
+            `📋 Données du formulaire :\n${JSON.stringify(data.formulaireRecu, null, 2)}\n\n` +
+            `📦 Données envoyées au CRM :\n${JSON.stringify(data.donneesEnvoyees, null, 2)}\n\n` +
+            `📞 Réponse de l'API CRM :\n${data.reponseCRM}`
           );
 
         } catch (err) {
-          console.error("❌ Erreur envoi :", err);
+          console.error("❌ Erreur envoi formulaire :", err);
           alert("Erreur lors de l’envoi du formulaire !");
         }
       });
     }
-
 
 
     // === Bouton météo ===

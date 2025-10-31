@@ -184,27 +184,23 @@ app.listen(port, () => {
 });
 
 function getParisDateTime(dateInput) {
-  // Si une date est fournie (depuis un <input type="date">), on la combine avec l'heure actuelle
+  // Si on reçoit "2025-10-31", on la combine avec l'heure actuelle
   const now = new Date();
-  const baseDate = dateInput ? new Date(`${dateInput}T${now.toTimeString().slice(0, 8)}`) : now;
+  const localDate = dateInput
+    ? new Date(`${dateInput}T${now.toTimeString().slice(0, 8)}`)
+    : now;
 
-  // Convertir en heure de Paris
-  const parisFormatter = new Intl.DateTimeFormat("fr-FR", {
-    timeZone: "Europe/Paris",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: false
-  });
+  // Décale la date selon le fuseau Europe/Paris
+  const options = { timeZone: "Europe/Paris" };
+  const parisDate = new Date(localDate.toLocaleString("en-US", options));
 
-  // Exemple : "31/10/2025, 15:25:32"
-  const formatted = parisFormatter.format(baseDate);
+  // Formatte proprement en YYYY-MM-DD HH:mm:ss
+  const year = parisDate.getFullYear();
+  const month = String(parisDate.getMonth() + 1).padStart(2, "0");
+  const day = String(parisDate.getDate()).padStart(2, "0");
+  const hours = String(parisDate.getHours()).padStart(2, "0");
+  const minutes = String(parisDate.getMinutes()).padStart(2, "0");
+  const seconds = String(parisDate.getSeconds()).padStart(2, "0");
 
-  // On reconvertit proprement en "YYYY-MM-DD HH:mm:ss"
-  const [datePart, timePart] = formatted.split(", ");
-  const [day, month, year] = datePart.split("/");
-  return `${year}-${month}-${day} ${timePart}`;
+  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 }

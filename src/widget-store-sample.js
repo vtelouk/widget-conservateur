@@ -446,25 +446,7 @@ export default class InfoCard extends HTMLElement {
                 <option value="RENN">Renonciation</option>
                 <option value="INST">Instance</option>
               </select>
-            </div>
-            <!-- Colonne droite -->
-            <div class="col-right">
-              <label>Commentaires <span>(255 caractères)</span> :</label>
-              <textarea name="commentaire" rows="6" maxlength="255" placeholder="Saisissez un commentaire..."></textarea>
-            </div>
-          </div>
-          <div class="form-footer">
-            <button type="submit" class="btn">Envoyer</button>
-          </div>
-        </form>
-      </div>
 
-      <div class="card">
-        <h3 class="italic">Tâches à réaliser</h3>
-        <form id="tacheForm" class="form-tache">
-          <div class="form-grid">
-            <!-- Colonne gauche -->
-            <div class="col-left">
               <label>Tâche :</label>
               <select name="tache" required>
                 <option value="">-- Sélectionner --</option>
@@ -495,7 +477,6 @@ export default class InfoCard extends HTMLElement {
           </div>
         </form>
       </div>
-
 
     </div>
   </div>

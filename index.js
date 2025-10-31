@@ -138,8 +138,10 @@ app.post("/api/motif", async (req, res) => {
           codeMotif3: formData.sousMotif2 || "",
           idPersonne: "304100",
           commentaireTache: formData.commentaire || "",
-          codeTache: "ET04",
-          dateTache: new Date().toISOString().slice(0, 19).replace("T", " "),
+          codeTache: form.tache,
+          dateTache: form.dateTache
+            ? `${form.dateTache} 00:00:00`
+            : new Date().toISOString().slice(0, 19).replace("T", " "),
         },
       ],
     };

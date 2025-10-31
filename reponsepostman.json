@@ -1,0 +1,1424 @@
+[
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "PRDC",
+            "libelle": "Production"
+        },
+        "motif3": {
+            "code": "AN",
+            "libelle": "AN"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "PRDC",
+            "libelle": "Production"
+        },
+        "motif3": {
+            "code": "VCP",
+            "libelle": "VCP"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "PRDC",
+            "libelle": "Production"
+        },
+        "motif3": {
+            "code": "FRGS",
+            "libelle": "Fourgous"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "PRDC",
+            "libelle": "Production"
+        },
+        "motif3": {
+            "code": "RENN",
+            "libelle": "Renonciation"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "PRDC",
+            "libelle": "Production"
+        },
+        "motif3": {
+            "code": "CRRE",
+            "libelle": "Correction"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "PRDC",
+            "libelle": "Production"
+        },
+        "motif3": {
+            "code": "INST",
+            "libelle": "Instance"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "PRDC",
+            "libelle": "Production"
+        },
+        "motif3": {
+            "code": "CPER",
+            "libelle": "Chèque périmé"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "PRDC",
+            "libelle": "Production"
+        },
+        "motif3": {
+            "code": "TENT",
+            "libelle": "Transfert entrant"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "RPAR",
+            "libelle": "Rachat partiel"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "RTTA",
+            "libelle": "Rachat total"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "RPRG",
+            "libelle": "Rachat programmé"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "CAVA",
+            "libelle": "Création d'avance"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "RENT",
+            "libelle": "Rentes"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "DECE",
+            "libelle": "Décès"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "REPA",
+            "libelle": "Répartition"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "CECH",
+            "libelle": "Contrat échu"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "CPER",
+            "libelle": "Chèque périmé"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "TSRT",
+            "libelle": "Transfert sortant"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "ECKE",
+            "libelle": "Eckert"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "ARBI",
+            "libelle": "Arbitrage"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "BENE",
+            "libelle": "Bénéficiaire"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "CADR",
+            "libelle": "Changement d'adresse"
+        },
+        "autorisation": {
+            "code": "P",
+            "libelle": "Code client obligatoire"
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "CRIB",
+            "libelle": "Changement de RIB"
+        },
+        "autorisation": {
+            "code": "P",
+            "libelle": "Code client obligatoire"
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "PREL",
+            "libelle": "Prélèvement / appel de cotisation"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "FCP",
+            "libelle": "FCP"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "FCNT",
+            "libelle": "Fiche contact"
+        },
+        "autorisation": {
+            "code": "P",
+            "libelle": "Code client obligatoire"
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "MFRA",
+            "libelle": "Modification frais de gestion"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "INTE",
+            "libelle": "Intérêts / remboursement d'avance"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "OGES",
+            "libelle": "Option de gestion"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "RVIG",
+            "libelle": "Remise en vigueur"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "RELA",
+            "libelle": "Relance"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "NANT",
+            "libelle": "Nantissement / Main levée"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "PRDC",
+            "libelle": "Production"
+        },
+        "motif3": {
+            "code": "AN",
+            "libelle": "AN"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "PRDC",
+            "libelle": "Production"
+        },
+        "motif3": {
+            "code": "VCP",
+            "libelle": "VCP"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "PRDC",
+            "libelle": "Production"
+        },
+        "motif3": {
+            "code": "FRGS",
+            "libelle": "Fourgous"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "PRDC",
+            "libelle": "Production"
+        },
+        "motif3": {
+            "code": "RENN",
+            "libelle": "Renonciation"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "PRDC",
+            "libelle": "Production"
+        },
+        "motif3": {
+            "code": "CRRE",
+            "libelle": "Correction"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "PRDC",
+            "libelle": "Production"
+        },
+        "motif3": {
+            "code": "INST",
+            "libelle": "Instance"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "PRDC",
+            "libelle": "Production"
+        },
+        "motif3": {
+            "code": "CPER",
+            "libelle": "Chèque périmé"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "PRDC",
+            "libelle": "Production"
+        },
+        "motif3": {
+            "code": "TENT",
+            "libelle": "Transfert entrant"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "RPAR",
+            "libelle": "Rachat partiel"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "RTTA",
+            "libelle": "Rachat total"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "RPRG",
+            "libelle": "Rachat programmé"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "CAVA",
+            "libelle": "Création d'avance"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "RENT",
+            "libelle": "Rentes"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "DECE",
+            "libelle": "Décès"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "REPA",
+            "libelle": "Répartition"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "CECH",
+            "libelle": "Contrat échu"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "CPER",
+            "libelle": "Chèque périmé"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "TSRT",
+            "libelle": "Transfert sortant"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "PRES",
+            "libelle": "Prestations"
+        },
+        "motif3": {
+            "code": "ECKE",
+            "libelle": "Eckert"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "ARBI",
+            "libelle": "Arbitrage"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "BENE",
+            "libelle": "Bénéficiaire"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "CADR",
+            "libelle": "Changement d'adresse"
+        },
+        "autorisation": {
+            "code": "P",
+            "libelle": "Code client obligatoire"
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "CRIB",
+            "libelle": "Changement de RIB"
+        },
+        "autorisation": {
+            "code": "P",
+            "libelle": "Code client obligatoire"
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "PREL",
+            "libelle": "Prélèvement / appel de cotisation"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "FCP",
+            "libelle": "FCP"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "FCNT",
+            "libelle": "Fiche contact"
+        },
+        "autorisation": {
+            "code": "P",
+            "libelle": "Code client obligatoire"
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "MFRA",
+            "libelle": "Modification frais de gestion"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "INTE",
+            "libelle": "Intérêts / remboursement d'avance"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "OGES",
+            "libelle": "Option de gestion"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "RVIG",
+            "libelle": "Remise en vigueur"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "IGES",
+            "libelle": "Information gestion"
+        },
+        "motif2": {
+            "code": "VIEC",
+            "libelle": "Vie du contrat"
+        },
+        "motif3": {
+            "code": "NANT",
+            "libelle": "Nantissement / Main levée"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "DCME",
+            "libelle": "Documents / duplicata"
+        },
+        "motif2": {
+            "code": "RDS",
+            "libelle": "RDS"
+        },
+        "motif3": {
+            "code": "VIDE",
+            "libelle": "Vide"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "DCME",
+            "libelle": "Documents / duplicata"
+        },
+        "motif2": {
+            "code": "CFIS",
+            "libelle": "Certificats fiscaux"
+        },
+        "motif3": {
+            "code": "VIDE",
+            "libelle": "Vide"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "DCME",
+            "libelle": "Documents / duplicata"
+        },
+        "motif2": {
+            "code": "DPLI",
+            "libelle": "Duplicata"
+        },
+        "motif3": {
+            "code": "VIDE",
+            "libelle": "Vide"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "DCME",
+            "libelle": "Documents / duplicata"
+        },
+        "motif2": {
+            "code": "CEXC",
+            "libelle": "Courrier d'excuses"
+        },
+        "motif3": {
+            "code": "VIDE",
+            "libelle": "Vide"
+        },
+        "autorisation": {
+            "code": "N",
+            "libelle": "Pas contrainte client/contrat"
+        }
+    },
+    {
+        "motif1": {
+            "code": "DCME",
+            "libelle": "Documents / duplicata"
+        },
+        "motif2": {
+            "code": "AECH",
+            "libelle": "Avis d'échéance"
+        },
+        "motif3": {
+            "code": "VIDE",
+            "libelle": "Vide"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "DCME",
+            "libelle": "Documents / duplicata"
+        },
+        "motif2": {
+            "code": "APER",
+            "libelle": "Avis d'opération"
+        },
+        "motif3": {
+            "code": "VIDE",
+            "libelle": "Vide"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "ADEM",
+            "libelle": "Autres demandes"
+        },
+        "motif2": {
+            "code": "ECLI",
+            "libelle": "Espace client"
+        },
+        "motif3": {
+            "code": "VIDE",
+            "libelle": "Vide"
+        },
+        "autorisation": {
+            "code": "N",
+            "libelle": "Pas contrainte client/contrat"
+        }
+    },
+    {
+        "motif1": {
+            "code": "ADEM",
+            "libelle": "Autres demandes"
+        },
+        "motif2": {
+            "code": "MPAS",
+            "libelle": "Mot de passe"
+        },
+        "motif3": {
+            "code": "VIDE",
+            "libelle": "Vide"
+        },
+        "autorisation": {
+            "code": "N",
+            "libelle": "Pas contrainte client/contrat"
+        }
+    },
+    {
+        "motif1": {
+            "code": "ADEM",
+            "libelle": "Autres demandes"
+        },
+        "motif2": {
+            "code": "VCNT",
+            "libelle": "Valeur contrat"
+        },
+        "motif3": {
+            "code": "VIDE",
+            "libelle": "Vide"
+        },
+        "autorisation": {
+            "code": "A",
+            "libelle": "Client et contrat oblig."
+        }
+    },
+    {
+        "motif1": {
+            "code": "ADEM",
+            "libelle": "Autres demandes"
+        },
+        "motif2": {
+            "code": "PGES",
+            "libelle": "Procédure de gestion"
+        },
+        "motif3": {
+            "code": "VIDE",
+            "libelle": "Vide"
+        },
+        "autorisation": {
+            "code": "N",
+            "libelle": "Pas contrainte client/contrat"
+        }
+    },
+    {
+        "motif1": {
+            "code": "ADEM",
+            "libelle": "Autres demandes"
+        },
+        "motif2": {
+            "code": "FISC",
+            "libelle": "Fiscalité"
+        },
+        "motif3": {
+            "code": "VIDE",
+            "libelle": "Vide"
+        },
+        "autorisation": {
+            "code": "N",
+            "libelle": "Pas contrainte client/contrat"
+        }
+    },
+    {
+        "motif1": {
+            "code": "ADEM",
+            "libelle": "Autres demandes"
+        },
+        "motif2": {
+            "code": "JRID",
+            "libelle": "Juridique"
+        },
+        "motif3": {
+            "code": "VIDE",
+            "libelle": "Vide"
+        },
+        "autorisation": {
+            "code": "N",
+            "libelle": "Pas contrainte client/contrat"
+        }
+    },
+    {
+        "motif1": {
+            "code": "ADEM",
+            "libelle": "Autres demandes"
+        },
+        "motif2": {
+            "code": "PRDI",
+            "libelle": "Produit"
+        },
+        "motif3": {
+            "code": "VIDE",
+            "libelle": "Vide"
+        },
+        "autorisation": {
+            "code": "N",
+            "libelle": "Pas contrainte client/contrat"
+        }
+    },
+    {
+        "motif1": {
+            "code": "ADEM",
+            "libelle": "Autres demandes"
+        },
+        "motif2": {
+            "code": "CCMM",
+            "libelle": "Contact commercial"
+        },
+        "motif3": {
+            "code": "VIDE",
+            "libelle": "Vide"
+        },
+        "autorisation": {
+            "code": "N",
+            "libelle": "Pas contrainte client/contrat"
+        }
+    },
+    {
+        "motif1": {
+            "code": "ADEM",
+            "libelle": "Autres demandes"
+        },
+        "motif2": {
+            "code": "REPA",
+            "libelle": "Répartition"
+        },
+        "motif3": {
+            "code": "VIDE",
+            "libelle": "Vide"
+        },
+        "autorisation": {
+            "code": "N",
+            "libelle": "Pas contrainte client/contrat"
+        }
+    },
+    {
+        "motif1": {
+            "code": "ADEM",
+            "libelle": "Autres demandes"
+        },
+        "motif2": {
+            "code": "LCBF",
+            "libelle": "LCB/FT"
+        },
+        "motif3": {
+            "code": "VIDE",
+            "libelle": "Vide"
+        },
+        "autorisation": {
+            "code": "N",
+            "libelle": "Pas contrainte client/contrat"
+        }
+    },
+    {
+        "motif1": {
+            "code": "CLIB",
+            "libelle": "Commentaire libre"
+        },
+        "motif2": {
+            "code": "XXXX",
+            "libelle": "xxxxxxxxx"
+        },
+        "motif3": {
+            "code": "VIDE",
+            "libelle": "Vide"
+        },
+        "autorisation": {
+            "code": "N",
+            "libelle": "Pas contrainte client/contrat"
+        }
+    }
+]

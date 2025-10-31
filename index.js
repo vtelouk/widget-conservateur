@@ -138,8 +138,8 @@ app.post("/api/motif", async (req, res) => {
           codeMotif3: formData.sousMotif2 || "",
           idPersonne: "304100",
           commentaireTache: formData.commentaireTache || "",
-          codeTache: form.tache,
-          dateTache: getParisDateTime(form.dateTache),
+          codeTache: formData.tache,
+          dateTache: getParisDateTime(formData.dateTache),
         },
       ],
     };
@@ -184,8 +184,12 @@ app.listen(port, () => {
 });
 
 function getParisDateTime(dateInput) {
-  const date = dateInput ? new Date(dateInput) : new Date();
-  const options = {
+  // Si une date est fournie (depuis un <input type="date">), on la combine avec l'heure actuelle
+  const now = new Date();
+  const baseDate = dateInput ? new Date(`${dateInput}T${now.toTimeString().slice(0, 8)}`) : now;
+
+  // Convertir en heure de Paris
+  const parisFormatter = new Intl.DateTimeFormat("fr-FR", {
     timeZone: "Europe/Paris",
     year: "numeric",
     month: "2-digit",
@@ -193,16 +197,14 @@ function getParisDateTime(dateInput) {
     hour: "2-digit",
     minute: "2-digit",
     second: "2-digit",
-    hour12: false,
-  };
+    hour12: false
+  });
 
-  // exemple : "31/10/2025 à 14:30:00" -> à reformater
-  const formatted = new Intl.DateTimeFormat("fr-FR", options).format(date);
+  // Exemple : "31/10/2025, 15:25:32"
+  const formatted = parisFormatter.format(baseDate);
 
-  // convertir au format SQL-like "YYYY-MM-DD HH:mm:ss"
-  const [day, month, year, hour, minute, second] = formatted
-    .replace(/[^\d]/g, " ")
-    .split(" ")
-    .filter(Boolean);
-  return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
+  // On reconvertit proprement en "YYYY-MM-DD HH:mm:ss"
+  const [datePart, timePart] = formatted.split(", ");
+  const [day, month, year] = datePart.split("/");
+  return `${year}-${month}-${day} ${timePart}`;
 }

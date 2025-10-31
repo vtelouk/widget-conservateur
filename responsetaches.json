@@ -1,0 +1,26 @@
+[
+    {
+        "code": "ET01",
+        "libelle": "Demande d'information"
+    },
+    {
+        "code": "ET02",
+        "libelle": "Envoi de document"
+    },
+    {
+        "code": "ET03",
+        "libelle": "Rappeler le client/agent"
+    },
+    {
+        "code": "ET04",
+        "libelle": "Relance"
+    },
+    {
+        "code": "ET05",
+        "libelle": "Validation de dossier"
+    },
+    {
+        "code": "ET06",
+        "libelle": "Autre"
+    }
+]

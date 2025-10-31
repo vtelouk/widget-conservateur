@@ -118,10 +118,10 @@ app.post("/api/motif", async (req, res) => {
 
     // 2️⃣ Construction du corps pour l’API Conservateur
     const body = {
-      idPersonne: "304100",
-      idAgent: "0020526",
-      nom: "BB",
-      prenom: "CC",
+      idPersonne: formData.idPersonne || "000000",
+      idAgent: formData.idAgent || "000000",
+      nom: formData.nom || "Inconnu",
+      prenom: formData.prenom || "Inconnu",
       role: "DD",
       fonction: "EE",
       sens: "E",

@@ -273,7 +273,7 @@ export default class InfoCard extends HTMLElement {
 
     select,
     textarea {
-      width: 100%;
+      width: 90%;
       border: 1px solid #ccc;
       border-radius: 8px;
       padding: 0.5rem 0.75rem;
@@ -318,6 +318,8 @@ export default class InfoCard extends HTMLElement {
         <p><strong>Nom:</strong> ${this.GetLastName()}</p>
         <p><strong>Nom d’usage:</strong> ${this.GetNameUsage()}</p>
         <p><strong>Email:</strong> ${this.GetEmail()}</p>
+        <p><strong>Id personne:</strong> ${this.GetIdPersonne()}</p>
+        <p><strong>Id agent:</strong> ${this.GetIdAgent()}</p>
       </div>
 
       <div id="treeContainer" class="card">
@@ -411,39 +413,43 @@ export default class InfoCard extends HTMLElement {
       });
     });
 
-    const motifForm = this.shadowRoot.querySelector("#motifForm");
+    motifForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-    if (motifForm) {
-      motifForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
+      const formEntries = Object.fromEntries(new FormData(motifForm).entries());
 
-        // Récupère les valeurs du formulaire
-        const formData = Object.fromEntries(new FormData(motifForm).entries());
-        console.log("📋 Données envoyées :", formData);
+      // Ajoute les infos utilisateur depuis ton widget
+      const formData = {
+        ...formEntries,
+        prenom: this.GETNAME(),
+        nom: this.GetLastName(),
+        idPersonne: this.GetIdPersonne(),
+        idAgent: this.GetIdAgent(),
+      };
 
-        try {
-          const res = await fetch("http://localhost:5000/api/motif", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData),
-          });
+      console.log("📋 Données envoyées au backend :", formData);
 
-          const data = await res.json();
+      try {
+        const res = await fetch("http://localhost:5000/api/motif", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
 
-          // 🟢 Affiche toutes les infos dans un seul alert formaté
-          alert(
-            `✅ Formulaire envoyé avec succès !\n\n` +
-            `📋 Données du formulaire :\n${JSON.stringify(data.formulaireRecu, null, 2)}\n\n` +
-            `📦 Données envoyées au CRM :\n${JSON.stringify(data.donneesEnvoyees, null, 2)}\n\n` +
-            `📞 Réponse de l'API CRM :\n${data.reponseCRM}`
-          );
+        const data = await res.json();
+        alert(
+          `✅ Données transmises au serveur !\n\n` +
+          `📋 Formulaire : ${JSON.stringify(data.formulaireRecu, null, 2)}\n\n` +
+          `📦 Données envoyées au CRM : ${JSON.stringify(data.donneesEnvoyees, null, 2)}\n\n` +
+          `📞 Réponse du CRM : ${data.reponseCRM}`
+        );
 
-        } catch (err) {
-          console.error("❌ Erreur envoi formulaire :", err);
-          alert("Erreur lors de l’envoi du formulaire !");
-        }
-      });
-    }
+      } catch (err) {
+        console.error("❌ Erreur envoi :", err);
+        alert("Erreur lors de l’envoi du formulaire !");
+      }
+    });
+
 
     // === Bouton météo ===
     const crmButton = this.shadowRoot.querySelector(".btns");

@@ -468,8 +468,21 @@ export default class InfoCard extends HTMLElement {
             </div>
             <!-- Colonne droite -->
             <div class="col-right">
-              <label>Commentaires <span>(255 caractères)</span> :</label>
-              <textarea name="commentaire" rows="6" maxlength="255" placeholder="Saisissez un commentaire..."></textarea>
+              <label>Commentaires (Motif) <span>(255 caractères)</span> :</label>
+              <textarea
+                name="commentaireMotif"
+                rows="6"
+                maxlength="255"
+                placeholder="Commentaire lié au motif..."
+              ></textarea>
+
+              <label style="margin-top:12px;">Commentaires (Tâche) <span>(255 caractères)</span> :</label>
+              <textarea
+                name="commentaireTache"
+                rows="6"
+                maxlength="255"
+                placeholder="Commentaire lié à la tâche..."
+              ></textarea>
             </div>
           </div>
           <div class="form-footer">

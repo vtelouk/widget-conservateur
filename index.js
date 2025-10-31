@@ -131,13 +131,13 @@ app.post("/api/motif", async (req, res) => {
         {
           numFiche: 1,
           idContrat: "F-AHF-1263884",
-          commentaireMotif: formData.commentaire || "",
+          commentaireMotif: formData.commentaireMotif || "",
           flagReclamation: true,
           codeMotif1: formData.motif || "",
           codeMotif2: formData.sousMotif1 || "",
           codeMotif3: formData.sousMotif2 || "",
           idPersonne: "304100",
-          commentaireTache: formData.commentaire || "",
+          commentaireTache: formData.commentaireTache || "",
           codeTache: form.tache,
           dateTache: form.dateTache
             ? `${form.dateTache} 00:00:00`
